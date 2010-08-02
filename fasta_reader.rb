@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # to run: 
 # gem install wukong
 # local: cat fasta.file | ruby fasta_reader.rb --map
