@@ -36,11 +36,16 @@ module FastaReader
     end
 
     def accumulate key,*seq
-      self.seq = seq.join("")
+      self.seq = seq.length > 0 ? seq[0] : ""
+    end
+
+    # overwrite emit to print the record as a single string
+    def emit record
+      puts record
     end
 
     def finalize
-      yield ">#{key}\n" + self.seq
+      yield ">#{key}\n#{self.seq}"
     end
   end      
 end
